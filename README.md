@@ -1,6 +1,7 @@
 # Salesforce Scheduler LWC
 
-![Scheduler](./images/scheduler.png)
+![Scheduler](https://github.com/TOTALLYMAJOR/SchedulerProject/assets/7169661/2bca4c60-8d96-4184-85e0-0299bb69713d)
+
 
 ## Overview
 
