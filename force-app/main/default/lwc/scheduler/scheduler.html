@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Scheduler" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning-input type="date" label="Select Date" value={selectedDate} onchange={handleSelectDate}></lightning-input>
+            
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+
+            <template if:true={timeSlots.length}>
+                <lightning-layout>
+                    <template for:each={timeSlots} for:item="slot">
+                        <lightning-layout-item key={slot.Id} size="3">
+                            <lightning-button label={slot.SlotTime__c} onclick={handleSlotSelection} data-id={slot.Id}></lightning-button>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </template>
+
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error">{errorMessage}</div>
+            </template>
+
+            <template if:true={successMessage}>
+                <div class="slds-text-color_success">{successMessage}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
